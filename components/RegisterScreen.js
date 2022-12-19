@@ -6,7 +6,7 @@ import {
   TextInput,
   Button,
   Alert,
-  Pressable,
+  Pressable, //! STYLES'I AYRI BİR JS FİLEDA DEPOLAYIP EXPORT YAP VE LOGİN VE REGİSTERDA ÇAĞIR İKİ AYRI DOSYADA AYNI KOD VAR GEREKSİZ.
   KeyboardAvoidingView,
   Platform,
   TouchableWithoutFeedback,
@@ -18,7 +18,7 @@ const HideKeyboard = ({ children }) => (
     {children}
   </TouchableWithoutFeedback>
 );
-function Login() {
+function RegisterScreen() {
   return (
     <HideKeyboard>
       <ScrollView>
@@ -43,7 +43,7 @@ function Login() {
               margin: 15,
             }}
           >
-            Sign In
+            Register
           </Text>
           <Text style={{ color: "#fff", margin: 25 }}>
             If You Need Any Support{" "}
@@ -64,7 +64,13 @@ function Login() {
           <View>
             <TextInput
               style={styles.login}
-              placeholder="Username or Email"
+              placeholder="Nickname"
+              placeholderTextColor="rgba(255, 255,255, 0.7)"
+              keyboardAppearance="dark" //bunu cihazın temasına göre otomatik algılayacak bir sisteme bak.
+            />
+            <TextInput
+              style={styles.login}
+              placeholder="Email"
               placeholderTextColor="rgba(255, 255,255, 0.7)"
               keyboardAppearance="dark" //bunu cihazın temasına göre otomatik algılayacak bir sisteme bak.
             />
@@ -78,19 +84,15 @@ function Login() {
             />
           </View>
 
-          <View>
-            <Pressable
-              onPress={() => Alert.alert("recovery password desune")}
-              style={{
-                textAlign: "left",
-                justifyContent: "flex-start",
-              }}
-            >
+          <View
+            style={{
+              width: "80%",
+            }}
+          >
+            <Pressable onPress={() => Alert.alert("recovery password desune")}>
               <Text
                 style={{
                   color: "#D029B6",
-                  textAlign: "left",
-                  justifyContent: "flex-start",
                   padding: 5,
                 }}
               >
@@ -142,7 +144,7 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   login: {
-    minWidth: "85%",
+    width: 320,
     height: 70,
     borderColor: "#fff",
     borderWidth: 1,
@@ -157,7 +159,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#D029B6",
     borderRadius: 20,
     margin: 5,
-    minWidth: "85%",
+    width: 320,
     height: 70,
     justifyContent: "center",
     alignItems: "center",
@@ -181,4 +183,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default RegisterScreen;
