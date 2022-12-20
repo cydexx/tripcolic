@@ -1,14 +1,14 @@
 import React from "react";
 import { ScrollView } from "react-native";
 
-import LoginScreen from "./components/LoginScreen";
-import RegisterScreen from "./components/RegisterScreen";
+import HomeScreen from "./screens/HomeScreen";
+import LoginScreen from "./screens/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen";
 
 export default function App() {
   return (
-    <ScrollView>
-      <LoginScreen />
-      <RegisterScreen />
-    </ScrollView>
+    <>
+      <HomeScreen />
+    </>
   );
 }
